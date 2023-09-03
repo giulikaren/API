@@ -8,8 +8,9 @@ const apiUrl = "https://restcountries.com/v3.1/all"
   .then(response => response.json())
   .then(data => {
     data.forEach(country => {
-      console.log("País nombre:", country.name.common);
+      console.log("País comunmente llamado:", country.name.common);
       console.log("Capital:", country.capital);
+      console.log()
     });
   })
   .catch(error => {
