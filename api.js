@@ -1,17 +1,17 @@
 
 
+/**const key = "uVKWQe5UlFqjSPMOKqjHwos2cYDgGHSJKakXuszy";**/
+const apiUrl = "https://restcountries.com/v3.1/all"
 
-const key = "uVKWQe5UlFqjSPMOKqjHwos2cYDgGHSJKakXuszy";
-const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 
-fetch(apiUrl)
+  fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
-    console.log("Datos de la API:", data);
+    data.forEach(country => {
+      console.log("País nombre:", country.name.common);
+      console.log("Capital:", country.capital);
+    });
   })
   .catch(error => {
-    console.error("Error al realizar la solicitud:", error);
+    console.error("Error al obtener los datos:", error);
   });
-
-
-
